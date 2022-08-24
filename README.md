@@ -2,7 +2,7 @@
 
 Based on the RELIC toolkit we implement:
 
-* Subgroup membership tetsings for $\mathbb{G}_1$, $\G_2$ and $\G_T$ on the BN-P446 and BW13-P310 curves.<br/>
+* Subgroup membership tetsings for $\mathbb{G}_1$, $\mathbb{G}_2$ and $\mathbb{G}_T$ on the BN-P446 and BW13-P310 curves.<br/>
  1. The Elliptic Net algorithm (with lazy reduction).
  2. The improved Elliptic Net algorithm (with lazy reduction) by Chen et al in 2015.
  3. Faster algorithm based on the second algorithm.
