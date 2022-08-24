@@ -32,13 +32,14 @@ For example, we want to run the first benchmark, we should follow the three step
 
 ### Source code
   
-The main source code of our algorithms are presented in [relic_pc_until.c file](https://github.com/eccdaiy39/smt/blob/master/smt-relic/src/pc/relic_pc_util.c), which includes the following functions:<br\>
+The main source code of our algorithms are presented in [relic_pc_until.c file](https://github.com/eccdaiy39/smt/blob/master/smt-relic/src/pc/relic_pc_util.c), which includes the following functions:<br/>
 
-* int g2_is_valid_bn(const g2_t a): $\mathbb{G}_2$ membership testing on the BN family.<br/>
-* int gt_is_valid_bn(gt_t a): $\mathbb{G}_T$ membership testing on the BN family.<br/>
-* int g1_is_valid_bw13(ep_t a) $\mathbb{G}_1$ membership testing on the BW13-P310 curve. <br/>
-* int g2_is_valid_bw13(ep_t a) $\mathbb{G}_2$ membership testing on the BW13-P310 curve. <br/>
-* int gt_is_valid_bw13(ep_t a) $\mathbb{G}_t$ membership testing on the BW13-P310 curve. <br/>
+* g2_is_valid_bn(const g2_t a): $\mathbb{G}_2$ membership testing on the BN family.<br/>
+* gt_is_valid_bn(gt_t a): $\mathbb{G}_T$ membership testing on the BN family.<br/>
+* g1_is_valid_bw13(ep_t a) $\mathbb{G}_1$ membership testing on the BW13-P310 curve. <br/>
+* g2_is_valid_bw13(ep_t a) $\mathbb{G}_2$ membership testing on the BW13-P310 curve. <br/>
+* gt_is_valid_bw13(ep_t a) $\mathbb{G}_T$ membership testing on the BW13-P310 curve. <br/>
+ Note the the previous fastest memberhship testings algotithms on the BN faamily are presented in functions g2_is_valid(const g2_t a) and gt_is_valid(const gt_t a), respectively.
 
  ### Benckmarks
  Benckmark results can be obtained by performing th
