@@ -7,7 +7,7 @@ The preset file is in the preset folder, named gmp-pbc-bls381.sh and gmp-pbc-kss
 
 ### Requirements
 
-The build process requires the CMake cross-platform build system. The GMP library is also needed in our benchmarks.
+The build process requires the [CMake](https://cmake.org/) cross-platform build system. The [GMP](https://gmplib.org/) library is also needed in our benchmarks.
 
 ### Build instructions
 
@@ -39,7 +39,7 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
 * g1_is_valid_bw13(ep_t a) $\mathbb{G}_1$ membership testing on the BW13-P310 curve. <br/>
 * g2_is_valid_bw13(ep_t a) $\mathbb{G}_2$ membership testing on the BW13-P310 curve. <br/>
 * gt_is_valid_bw13(ep_t a) $\mathbb{G}_T$ membership testing on the BW13-P310 curve. <br/>
- Note the the previous fastest memberhship testings algotithms on the BN faamily are presented in functions g2_is_valid(const g2_t a) and gt_is_valid(const gt_t a), respectively.
+ Note the the previous fastest memberhship testings algotithms on the BN family are presented in functions g2_is_valid(const g2_t a) and gt_is_valid(const gt_t a), respectively.
 
  ### Benckmarks
  Benckmark results can be obtained by performing th
