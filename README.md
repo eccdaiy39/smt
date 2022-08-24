@@ -39,8 +39,7 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
 * int g1_is_valid_bw13(ep_t a) $\mathbb{G}_1$ membership testing on the BW13-P310 curve. <br/>
 * int g2_is_valid_bw13(ep_t a) $\mathbb{G}_2$ membership testing on the BW13-P310 curve. <br/>
 * int gt_is_valid_bw13(ep_t a) $\mathbb{G}_t$ membership testing on the BW13-P310 curve. <br/>
-* Some other functions: relic-master/src/fpx  tool.c
-Notice that the file whose filename contains "tw" represents the computation is on the twisted curves.
-  ### Benckmarks
 
+ ### Benckmarks
+ Benckmark results can be obtained by performing th
 
