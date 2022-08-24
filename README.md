@@ -13,22 +13,6 @@ The build process requires the [CMake](https://cmake.org/) cross-platform build 
 
 Instructions for building the library can be found in the [Wiki](https://github.com/relic-toolkit/relic/wiki/Building).
 
-Here we give a direct way to verify our code.
-
-1. Create a target directory : mkdir build
-2. Locate the <preset> file in the preset folder and run the following:
-cd build
-../preset/<preset>.sh ../
-make
-3. Enter the bin folder and run the corresponding file.
-
-List of our benchmark for implementation of the Ellpitic Net algorithm:
-
-* elgmain_BLS12
-* elgmain_KSS18
-
-Notice that each preset file attached to only one benchmark here.
-For example, we want to run the first benchmark, we should follow the three steps and choose the preset file gmp-pbc-bls381.sh.
 
 ### Source code
   
@@ -39,8 +23,10 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
 * g1_is_valid_bw13(ep_t a) $\mathbb{G}_1$ membership testing on the BW13-P310 curve. <br/>
 * g2_is_valid_bw13(ep_t a) $\mathbb{G}_2$ membership testing on the BW13-P310 curve. <br/>
 * gt_is_valid_bw13(ep_t a) $\mathbb{G}_T$ membership testing on the BW13-P310 curve. <br/>
+
  Note the the previous fastest memberhship testings algotithms on the BN family are presented in functions g2_is_valid(const g2_t a) and gt_is_valid(const gt_t a), respectively.
 
  ### Benckmarks
- Benckmark results can be obtained by performing th
+ The function for benckmarking are presented in [bench_pc.c](https://github.com/eccdaiy39/smt/blob/master/smt-relic/bench/bench_pc.c) for the BN-P446 curve and 
+ [bench_pc_bw13.c](https://github.com/eccdaiy39/smt/blob/master/smt-relic/bench/bench_pc_bw13.c) for the BW13-P310 curve
 
