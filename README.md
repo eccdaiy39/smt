@@ -32,11 +32,13 @@ For example, we want to run the first benchmark, we should follow the three step
 
 ### Source code
 
-The source code of our algorithms distributed in different folders. Here we give a brief description.
+The main source code of our algorithms are presented in [relic_pc_until.c file](https://github.com/eccdaiy39/smt/blob/master/smt-relic/src/pc/relic_pc_util.c).<br\>
 
 * Pairings: relic-master/src/pp  en_**.c
 * Main function of benchmark: relic-master/bench/  elgmain_**.c
 * Some other functions: relic-master/src/fpx  tool.c
 
 Notice that the file whose filename contains "tw" represents the computation is on the twisted curves.
+  ### Benckmarks
+
 
