@@ -31,13 +31,15 @@ Notice that each preset file attached to only one benchmark here.
 For example, we want to run the first benchmark, we should follow the three steps and choose the preset file gmp-pbc-bls381.sh.
 
 ### Source code
+  
+The main source code of our algorithms are presented in [relic_pc_until.c file](https://github.com/eccdaiy39/smt/blob/master/smt-relic/src/pc/relic_pc_util.c), which includes the following functions:<br\>
 
-The main source code of our algorithms are presented in [relic_pc_until.c file](https://github.com/eccdaiy39/smt/blob/master/smt-relic/src/pc/relic_pc_util.c).<br\>
-
-* Pairings: relic-master/src/pp  en_**.c
-* Main function of benchmark: relic-master/bench/  elgmain_**.c
+* int g2_is_valid_bn(const g2_t a): $\mathbb{G}_2$ membership testing on the BN family.<br\>
+* int gt_is_valid_bn(gt_t a): $\mathbb{G}_T$ membership testing on the BN family.<br\>
+* int g1_is_valid_bw13(ep_t a) $\mathbb{G}_1$ membership testing on the BW13-P310 curve. <br\>
+* int g2_is_valid_bw13(ep_t a) $\mathbb{G}_2$ membership testing on the BW13-P310 curve. <br\>
+* int gt_is_valid_bw13(ep_t a) $\mathbb{G}_t$ membership testing on the BW13-P310 curve. <br\>
 * Some other functions: relic-master/src/fpx  tool.c
-
 Notice that the file whose filename contains "tw" represents the computation is on the twisted curves.
   ### Benckmarks
 
