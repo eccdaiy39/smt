@@ -33,7 +33,7 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
   - #### BN-P446
 
   1. mkdir build && cd build 
-  2. ../preset/x64-pbc-bls12-446.sh ../
+  2. ../preset/x64-pbc-bn446.sh ../
   3. make
   4. cd bin && ./bench_pc
   
