@@ -2,14 +2,8 @@
 
 Based on the RELIC toolkit we implement:
 
-* Subgroup membership tetsings for $\mathbb{G}_1$, $\mathbb{G}_2$ and $\mathbb{G}_T$ on the BN-P446 and BW13-P310 curves.<br/>
- 1. The Elliptic Net algorithm (with lazy reduction).
- 2. The improved Elliptic Net algorithm (with lazy reduction) by Chen et al in 2015.
- 3. Faster algorithm based on the second algorithm.
-
-We implement the optimal ate pairing on the BLS12-P381 curve and the KSS18-P676 curve. The preset file is in the preset folder, named gmp-pbc-bls381.sh and gmp-pbc-kss676.sh, respectively.
-
-Miller's algorithm is implemented by the authors of this library (Deigo et al), we just run the existed function for comparison.
+Subgroup membership tetsings for $\mathbb{G}_1$, $\mathbb{G}_2$ and $\mathbb{G}_T$ on the BN-P446 and BW13-P310 curves.
+The preset file is in the preset folder, named gmp-pbc-bls381.sh and gmp-pbc-kss676.sh, respectively.<br/>
 
 ### Requirements
 
