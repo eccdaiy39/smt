@@ -37,7 +37,7 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
   3. make
   4. cd bin && ./bench_pc
   5. 
-![image](G2-BN.png)  
+![image](https://github.com/eccdaiy39/smt/blob/master/image/G2-BN.png)
 ![image](GT-BN.png)  
 
  - #### BW13-P310
