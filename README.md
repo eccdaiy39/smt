@@ -36,9 +36,9 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
   2. ../preset/x64-pbc-bn446.sh ../
   3. make
   4. cd bin && ./bench_pc
-  5. 
+
 ![image](https://github.com/eccdaiy39/smt/blob/master/image/G2-BN.png)
-![image](GT-BN.png)  
+![image](https://github.com/eccdaiy39/smt/blob/master/image/GT-BN.png)
 
  - #### BW13-P310
 
@@ -46,8 +46,9 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
   2. ../preset/gmp-ecc-bw310.sh ../
   3. make
   4. cd bin && ./bench_pc_bw13
-  5. 
-  ![image](BW13.png)  
+  
+![image](https://github.com/eccdaiy39/smt/blob/master/image/BW13.png)
+
 
  
 
