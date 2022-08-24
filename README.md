@@ -32,10 +32,17 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
  Here we give a direct way to obtain concrete datas.
   - #### BN-P446
 
-1. Create a target directory : mkdir build
-2. Locate the <preset> file in the preset folder and run the following:
-cd build
-../preset/<preset>.sh ../
-make
+  1. mkdir build && cd build 
+  2. ../preset/x64-pbc-bls12-446.sh ../
+  3. make
+  4. cd bin && ./bench_pc
+  
+ - #### BW13-P310
+
+  1. mkdir build && cd build 
+  2. ../preset/gmp-ecc-bw310.sh ../
+  3. make
+  4. cd bin && ./bench_pc_bw13
+  
  
 
