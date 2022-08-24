@@ -30,7 +30,7 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
  The function for benckmarking are presented in [bench_pc.c](https://github.com/eccdaiy39/smt/blob/master/smt-relic/bench/bench_pc.c) for the BN-P446 curve and 
  [bench_pc_bw13.c](https://github.com/eccdaiy39/smt/blob/master/smt-relic/bench/bench_pc_bw13.c) for the BW13-P310 curve.
  Here we give a direct way to obtain concrete datas.
-   #### BN-P446
+  - #### BN-P446
 
 1. Create a target directory : mkdir build
 2. Locate the <preset> file in the preset folder and run the following:
