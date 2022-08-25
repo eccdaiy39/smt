@@ -3,7 +3,7 @@
 Based on the famous [RELIC cryptographic library](https://github.com/relic-toolkit/relic) we implement:
 
 Subgroup membership tetsings for $\mathbb{G}_1$, $\mathbb{G}_2$ and $\mathbb{G}_T$ on the BN-P446 and BW13-P310 curves.
-The preset file is in the preset folder, named gmp-pbc-bls381.sh and gmp-pbc-kss676.sh, respectively.<br/>
+The preset file is in the preset folder, named x64-pbc-bn446.sh and gmp-ecc-bw310.sh, respectively.<br/>
 
 ### Requirements
 
