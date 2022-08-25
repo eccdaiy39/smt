@@ -16,7 +16,7 @@ Instructions for building the library can be found in the [Wiki](https://github.
 
 ### Source code
   
-The main source code of our algorithms are presented in [relic_pc_until.c file](https://github.com/eccdaiy39/smt/blob/master/smt-relic/src/pc/relic_pc_util.c), which includes the following functions:<br/>
+The main source code of our algorithms are presented in [relic_pc_until.c](https://github.com/eccdaiy39/smt/blob/master/smt-relic/src/pc/relic_pc_util.c), which includes the following functions:<br/>
 
 * g2_is_valid_bn(const g2_t a): $\mathbb{G}_2$ membership testing on the BN-P446 curve.<br/>
 * gt_is_valid_bn(gt_t a): $\mathbb{G}_T$ membership testing on the BN-P446 curve.<br/>
