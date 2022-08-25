@@ -49,6 +49,6 @@ The main source code of our algorithms are presented in [relic_pc_until.c file](
   
 ![image](https://github.com/eccdaiy39/smt/blob/master/image/BW13.png)
 
-# Contact
+### Contact
  email:daiy39@mail2.sysu.edu.cn<br/>
  please contact me via email for any questions.
