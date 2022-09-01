@@ -398,7 +398,7 @@ int gt_is_valid(const gt_t a) {
 
 int gt_is_valid_bn(gt_t a) {
 	bn_t p, n;
-	gt_t u, v, y, w;
+	gt_t u0, u1, u2, u3;
 	int l, r = 0;
 	const int *b;
 
@@ -408,18 +408,18 @@ int gt_is_valid_bn(gt_t a) {
 
 	bn_null(n);
 	bn_null(p);
-	gt_null(u);
-	gt_null(v);
-	gt_null(r);
-	gt_null(w);
+	gt_null(u0);
+	gt_null(u1);
+	gt_null(u2);
+	gt_null(u3);
 
 	RLC_TRY {
 		bn_new(n);
 		bn_new(p);
-		gt_new(u);
-		gt_new(v);
-		gt_null(r);
-		gt_null(w);
+		gt_new(u0);
+		gt_new(u1);
+		gt_new(u2);
+		gt_new(u3);
 
 
 		pc_get_ord(n);
@@ -429,26 +429,29 @@ int gt_is_valid_bn(gt_t a) {
 			p->sign = RLC_POS;
 			fp_prime_get_par(n);
 			b = fp_prime_get_par_sps(&l);
-			fp12_exp_cyc_sps((void *)v, (void *)a, b, l, RLC_POS);
-			gt_sqr(u, v);
-			gt_mul(y, u, a);
-			/* Compute v = a^(p + 1). */
-			gt_frb(w, v, 1);
-			gt_frb(v, v, 2);
-			gt_frb(u, u, 3);
-			gt_mul(v, v, y);
-			gt_mul(v, v, w);
-			/* Check if a^(p + 1) = a^t. */
-			r = fp12_test_cyc((void *)a) && (gt_cmp(u, v) == RLC_EQ);
+			fp12_exp_cyc_sps((void *)u0, (void *)a, b, l, RLC_POS);
+
+			/* Compute u1= a^(2n+(n+1)*p+n*p^3). */
+			gt_sqr(u1, u0);
+			gt_mul(u2, u0, a);
+			gt_frb(u2, u2, 1);
+			gt_frb(u3, u0, 3);
+			
+			gt_mul(u1, u1, u2);
+			gt_mul(u1, u1, u3);
+			/* Compute u0= a^(n*p^2). */
+			gt_frb(u2, u0, 2);
+
+			r = fp12_test_cyc((void *)a) && (gt_cmp(u0, u1) == RLC_EQ);
 	} RLC_CATCH_ANY {
 		RLC_THROW(ERR_CAUGHT);
 	} RLC_FINALLY {
 		bn_free(p);
 		bn_free(n);
-		gt_free(u);
-		gt_free(v);
-		gt_free(r);
-		gt_free(w);
+		gt_free(u0);
+		gt_free(u1);
+		gt_free(u2);
+		gt_free(u3);
 
 
 	}
