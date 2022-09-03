@@ -21,8 +21,8 @@ The main source code of our algorithms are presented in [relic_pc_until.c](https
 * g2_is_valid_bn(const g2_t a): $\mathbb{G}_2$ membership testing on the BN-P446 curve.<br/>
 * gt_is_valid_bn(gt_t a): $\mathbb{G}_T$ membership testing on the BN-P446 curve.<br/>
 * g1_is_valid_bw13(ep_t a) $\mathbb{G}_1$ membership testing on the BW13-P310 curve. <br/>
-* g2_is_valid_bw13(ep_t a) $\mathbb{G}_2$ membership testing on the BW13-P310 curve. <br/>
-* gt_is_valid_bw13(ep_t a) $\mathbb{G}_T$ membership testing on the BW13-P310 curve. <br/>
+* g2_is_valid_bw13(ep13_t a) $\mathbb{G}_2$ membership testing on the BW13-P310 curve. <br/>
+* gt_is_valid_bw13(fp13_t a) $\mathbb{G}_T$ membership testing on the BW13-P310 curve. <br/>
 
  Note the the previous fastest memberhship testings algotithms on the BN-P446 curve are presented in functions g2_is_valid(const g2_t a) and gt_is_valid(const gt_t a), respectively.
 
