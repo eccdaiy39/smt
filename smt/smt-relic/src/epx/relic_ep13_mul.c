@@ -40,20 +40,18 @@
 
 #if defined(EP_ENDOM)
 
-static void ep13_mul_glv_imp(ep13_t r, ep13_t p, const bn_t k) {
-	int sign, i, j, l, _l[24];
-	bn_t n, _k[24], u, v;
+static void ep13_mul_glv_imp(ep13_t r, ep13_t p, bn_t k) {
+	int i, j, l, _l[24];
+	bn_t n, _k[24], u;
 	int8_t naf[24][RLC_FP_BITS + 1];
 	ep13_t q[24];
 
 	bn_null(n);
 	bn_null(u);
-	bn_null(v);
 
 	RLC_TRY {
 		bn_new(n);
 		bn_new(u);
-		bn_new(v);
 		for (i = 0; i < 24; i++) {
 			bn_null(_k[i]);
 			ep13_null(q[i]);
@@ -61,39 +59,24 @@ static void ep13_mul_glv_imp(ep13_t r, ep13_t p, const bn_t k) {
 			ep13_new(q[i]);
 		}
 
-        bn_abs(v, k);
 		ep_curve_get_ord(n);
-        if (bn_cmp_abs(v, n) == RLC_GT) {
-            bn_mod(v, v, n);
-        }
-
 		fp_prime_get_par(u);
-		sign = bn_sign(u);
-        bn_abs(u, u);
+		bn_neg(u,u);
+		bn_mod(_k[0], k, n);
+		bn_rec_frb(_k, 24, _k[0], u, n, ep_curve_is_pairf() == EP_BW13);
+		for (i = 0; i < 24; i++)bn_print(_k[i]);
 
 		ep13_norm(q[0], p);
-		for (i = 0; i < 24; i++) {
-			bn_mod(_k[i], v, u);
-			bn_div(v, v, u);
-			if ((sign == RLC_NEG) && (i % 2 != 0)) {
-				bn_neg(_k[i], _k[i]);
-			}
-            if (bn_sign(k) == RLC_NEG) {
-                bn_neg(_k[i], _k[i]);
-            }
-            if (i > 0) {
-                ep13_frb(q[i], q[i - 1], 1);
-            }
-		}
+		for (i = 1; i < 24; i++)ep13_psi(q[i], q[i-1], 1);
 
-        l = 0;
+		l = 0;
 		for (i = 0; i < 24; i++) {
 			if (bn_sign(_k[i]) == RLC_NEG) {
 				ep13_neg(q[i], q[i]);
 			}
 			_l[i] = RLC_FP_BITS + 1;
 			bn_rec_naf(naf[i], &_l[i], _k[i], 2);
-            l = RLC_MAX(l, _l[i]);
+			l = RLC_MAX(l, _l[i]);
 		}
 
 		ep13_set_infty(r);
@@ -118,8 +101,7 @@ static void ep13_mul_glv_imp(ep13_t r, ep13_t p, const bn_t k) {
 	}
 	RLC_FINALLY {
 		bn_free(n);
-        bn_free(u);
-        bn_free(v);
+		bn_free(u);
 		for (i = 0; i < 24; i++) {
 			bn_free(_k[i]);
 			ep13_free(q[i]);
